@@ -1,0 +1,73 @@
+{% extends "_basic.html" %}
+{% block content %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/card.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/header.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/button.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/user-profile.css' %}"/>
+
+        <!-- AJAX -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script type = "text/javascript">
+            $(document).ready(function(e){
+                $(document).on("click", "#profile-follow", function(e){
+                    e.preventDefault();
+                    var pk = $(this).attr("value");
+                    var follow_url = "/insta/follow/"
+                    var id = "#profilefollow-section"
+                    console.log(id);
+                    console.log(follow_url);
+                    $.ajax({
+                        type: "POST",
+                        url: follow_url,
+                        data: {"id" : pk, "csrfmiddlewaretoken": "{{ csrf_token }}"},
+                        dataType: "json",
+                        success: function(response){
+                            $(id).html(response["form"])
+                        },
+                        error: function(rs, e){
+                            console.log(rs.responseText);
+                        }
+                    });
+                });
+            });
+        </script>
+
+</head>
+<body>
+    <div class = "header">
+        <h2 class = "heading">Instagram</h2>
+    </div>
+
+    <div class = "card" style = "width: 800px; left: 300px; height: 300px">
+        <img src = "{{profile.profile_picture.url}}" class = "profile-picture">
+        <h3 class = "username">{{profile.user.username}}</h3>
+        <a href = "http://127.0.0.1:8000/insta/{{profile.user.id}}/followers/"><p class = "content">{{profile.follower}} followers</p></a>
+        <a href = "http://127.0.0.1:8000/insta/{{profile.user.id}}/following/"><p class = "content" style = "left: 400px">{{profile.following}} following</p></a>
+        <p class = "content" style = "top: 175px">{{profile.status}}</p>
+        {% if is_authenticated_user %}
+        <a href = "http://127.0.0.1:8000/insta/edit/{{profile.user.id}}"><button class = "follow content" style = "top: 135px">edit profile</button></a>
+        {% else %}
+        <!-- <a href = "#"><button class = "follow content" style = "top: 135px">follow</button></a> -->
+        <div id = "profilefollow-section" class = "content" style = "position: absolute; left: 442px;">
+            {% include 'profilefollow_section.html' %}
+        </div>
+        {% endif %}
+        <hr style = "position: relative;
+        top: 200px;">
+    </div>
+
+    <div class = "user-post-card">
+        {% for post in posts %}
+
+            <img src = "{{post.post.url}}" class = "profile-post">
+
+        {% endfor %}
+    </div>
+</body>
+
+{% endblock %}

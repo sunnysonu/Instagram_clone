@@ -1,0 +1,37 @@
+{% extends "_basic.html" %}
+{% block content %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/card.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/header.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/button.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/user-profile.css' %}"/>
+</head>
+<body>
+    <div class = "header">
+        <h2 class = "heading">Instagram</h2>
+    </div>
+
+    <div class = "card" style = "width: 800px; left: 300px; height: 300px">
+        <img src = "{{profile.profile_picture.url}}" class = "profile-picture">
+        <h3 class = "username">{{profile.user.username}}</h3>
+        <a href = "http://127.0.0.1:8000/insta/{{profile.user.id}}/followers/"><p class = "content">{{profile.follower}} followers</p></a>
+        <a href = "http://127.0.0.1:8000/insta/{{profile.user.id}}/following/"><p class = "content" style = "left: 400px">{{profile.following}} following</p></a>
+        <p class = "content" style = "top: 175px">{{profile.status}}</p>
+        <a href = "#"><button class = "follow content" style = "top: 135px">follow</button></a>
+
+        <hr style = "position: relative;
+        top: 200px;">
+    </div>
+
+    <div class = "user-post-card">
+        {% for post in posts %}
+
+            <img src = "{{post.post.url}}" class = "profile-post">
+
+        {% endfor %}
+    </div>
+</body>
+
+{% endblock %}

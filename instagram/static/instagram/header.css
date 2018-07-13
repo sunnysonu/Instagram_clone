@@ -1,0 +1,69 @@
+.header
+{
+    background-color: #1A476E;
+    /* box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+    transition: 1s;
+    width: 100%;
+    height: 20px;
+    padding: 30px;
+
+}
+
+.heading
+{
+    position: absolute;
+    right: 1100px;
+    top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.options
+{
+    position: absolute;
+    left: 10px;
+    top: 25px;
+}
+
+.right-last
+{
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+.left-last
+{
+    position: absolute;
+    left: 15px;
+    top: 3px;
+}
+
+.header-username
+{
+    position: absolute;
+    right: 70px;
+    top: 20px;
+}
+
+.header-profile-picture
+{
+    position: absolute;
+    top: 18px;
+    right: 160px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.profile-picture-transition
+{
+    background: red;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s, height 0.5s;
+}
+
+.profile-picture-transition:hover {
+    width: 100px;
+    height: 100px;
+}

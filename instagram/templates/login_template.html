@@ -1,0 +1,26 @@
+{% extends "_basic.html" %}
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/signup.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/card.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/header.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/button.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/anchor.css' %}"/>
+</head>
+
+<div class = "header">
+    <h2 class = "heading">Instagram</h2>
+    <a href="http://127.0.0.1:8000/insta/signup/">
+        <div class = "right-last"><h5>SignUp</h5></div>
+    </a>
+</div>
+
+<div class = "card", class = "signup-font" style = "height : 280px">
+<form method = "post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type = "submit" value = "login" class = "button">
+</form>
+</div>
+{% endblock %}

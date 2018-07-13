@@ -1,0 +1,118 @@
+{% extends "_basic.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+function ShowNavbar()
+{
+    if(document.getElementById("navbarid").style.zIndex == -1)
+    {
+        document.getElementById("navbarid").style.zIndex = 1;
+        document.getElementById("hidenavbarid").style.zIndex = -1;
+    }
+    else
+    {
+        document.getElementById("navbarid").style.zIndex = -1;
+        document.getElementById("hidenavbarid").style.zIndex = 1;
+    }
+}
+
+</script>
+
+<!-- AJAX -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type = "text/javascript">
+    $(document).ready(function(e){
+        $(document).on("click", "#like", function(e){
+            e.preventDefault();
+            console.log(id);
+            var pk = $(this).attr("value");
+            var like_url = "/insta/like/"
+            var id = "#like-section" + pk;
+            console.log(id);
+            console.log(like_url);
+            $.ajax({
+                type: "POST",
+                url: like_url,
+                data: {"id" : pk, "csrfmiddlewaretoken": "{{ csrf_token }}"},
+                dataType: "json",
+                success: function(response){
+                    $(id).html(response["form"])
+                },
+                error: function(rs, e){
+                    console.log(rs.responseText);
+                }
+            });
+        });
+    });
+</script>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/card.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/header.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/button.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/post.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/navbar.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/anchor.css' %}"/>
+</head>
+<body>
+    <div class = "header">
+        <h2 class = "heading">Instagram</h2>
+        
+        <a href = "http://127.0.0.1:8000/insta/user/{{user.id}}/">
+            <h6 class = "header-username">{{user.username}}</h6>
+        </a>
+
+        <img src = "{{user.userprofile.profile_picture.url}}" class = "header-profile-picture profile-picture-transition">
+
+        <a href="http://127.0.0.1:8000/insta/addpost/{{user.id}}">
+            <div class = "left-last"><h1>+</h1></div>
+        </a>
+
+        <a href="http://127.0.0.1:8000/insta/allusers/">
+            <div class = "right-last"
+                 style = "position: absolute;
+                          right: 15%;
+                          top: 20px"><h6>People</h6></div>
+        </a>
+
+        <a href="javascript:ShowNavbar()">
+            <div class = "right-last"><h2>=</h2></div>
+        </a>        
+
+        <div class = "navbar" id = "navbarid">
+            <a href="http://127.0.0.1:8000/insta/edit/{{user.id}}/">
+                <div class = "options"><h6>Edit Profile</h6></div>
+            </a>
+            <br>
+
+            <a href="http://127.0.0.1:8000/insta/logout/">
+                <div class = "options" style = "top: 75px"><h6>Logout</h6></div>
+            </a>
+            <br>
+
+        </div>
+
+        <div class = "hidenavbar-right" id = "hidenavbarid">
+        </div>
+
+    </div>
+    {% for post, is_liked in data %}
+    <div class = "card" class = "container">
+        <div class = "short-profile-card" class = "container">
+            <img src = "{{post.user_profile.profile_picture.url}}" class = "short-profile-picture">
+            <a style = "color : black" href = "http://127.0.0.1:8000/insta/user/{{post.user_profile.user.id}}/"><h6 class = "profile-username">{{post.user_profile.user.username}}</h6></a>
+        </div>
+        <img src = "{{post.post.url}}" class = "posted-image">
+        <div id = "like-section{{post.id}}">
+            {% include 'like_section.html' %}
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,63 @@
+.navbar
+{   
+    position: absolute;
+    top: 60px;
+    height: 100%;
+    width: 150px;
+    right: 0px;
+    background-color: #1A476E;
+}
+
+#navbarid
+{
+    z-index: -1;
+}
+
+.navbutton
+{
+    position: absolute;
+    right: 0px;
+    bottom: 95%;
+    width: 100px;
+    height: 30px;
+    background-color : #1A476E;
+    border : none;
+    color : white;
+    padding : 10px 10px;
+    text-align : center;
+    display : inline-block;
+    font-size : 16px;
+    margin : 4px 2px;
+    cursor : pointer;
+    border-radius : 4px;
+}
+
+#navbuttonid
+{
+    z-index: 1;
+}
+
+.hidenavbar-right
+{
+    position: absolute;
+    height: 100%;
+    width: 150px;
+    right: 0px;
+    top: 60px;
+    background-color: white;
+}
+
+#hidenavbarid
+{
+    z-index: 1;
+}
+
+.hidenavbar-top
+{
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    right: 0px;
+    top: 60px;
+    background-color: white;
+}

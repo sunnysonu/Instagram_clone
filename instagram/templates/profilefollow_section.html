@@ -1,0 +1,8 @@
+{% block content %}
+{% csrf_token %}
+{% if is_following %}
+    <button id = "profile-follow" class = "follow" style = "position: absolute; top: 25px; right: 40px" value = "{{profile.user.id}}">following</button>
+{% elif is_following == False %}
+    <button id = "profile-follow" class = "follow" style = "position: absolute; top: 25px; right: 40px" value = "{{profile.user.id}}">follow</button>
+{% endif %}
+{% endblock %}

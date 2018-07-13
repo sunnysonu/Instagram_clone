@@ -1,0 +1,19 @@
+.button
+{
+    width: 100%;
+    background-color : #1A476E;
+    border : none;
+    color : white;
+    padding : 10px 10px;
+    text-align : center;
+    display : inline-block;
+    font-size : 16px;
+    margin : 4px 2px;
+    cursor : pointer;
+    border-radius : 4px;
+}
+
+button:active
+{
+    background-color: #1A476E;
+}

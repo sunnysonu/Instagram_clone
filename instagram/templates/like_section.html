@@ -1,0 +1,12 @@
+{% block content %}
+<p style = "position: absolute;
+top: 550px;
+left: 90px;">{{post.likes.count}}</p>
+{% if request.user.is_authenticated %}
+    {% if is_liked %}
+        <button class = "like-button" id = "like" value = "{{post.id}}">liked</button>
+    {% else %}
+        <button class = "like-button" id = "like" value = "{{post.id}}">like</button>
+    {% endif %}
+{% endif %}
+{% endblock %}

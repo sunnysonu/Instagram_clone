@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/header.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/post.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/followers.css' %}"/>
+    <link rel="stylesheet" type="text/css" href = "{% static 'instagram/user-profile.css' %}"/>
+
+    </script>
+
+    <!-- AJAX -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type = "text/javascript">
+        $(document).ready(function(e){
+            $(document).on("click", "#follow", function(e){
+                e.preventDefault();
+                var pk = $(this).attr("value");
+                var follow_url = "/insta/follow/"
+                var id = "#alluser-section" + pk;
+                console.log(id);
+                console.log(follow_url);
+                $.ajax({
+                    type: "POST",
+                    url: follow_url,
+                    data: {"id" : pk, "csrfmiddlewaretoken": "{{ csrf_token }}"},
+                    dataType: "json",
+                    success: function(response){
+                        $(id).html(response["form"])
+                    },
+                    error: function(rs, e){
+                        console.log(rs.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class = "header">
+            <h2 class = "heading">Instagram</h2>
+    </div>
+
+    {% for follower, is_following in data %}
+        <div class = "follower-card">
+            <img src = "{{follower.profile_picture.url}}" class = "follower-picture">
+            <a href = "http://127.0.0.1:8000/insta/otheruser/{{follower.user.id}}/"><p class = "follower-username">{{follower.user.username}}</p></a>
+            <div id = "alluser-section{{follower.user.id}}">
+                {% include 'follow_section.html' %}
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
