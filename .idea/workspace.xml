@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3fbd4df2-f446-4e41-8628-7c256aab49fd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insta/settings.py" afterPath="$PROJECT_DIR$/insta/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insta/urls.py" afterPath="$PROJECT_DIR$/insta/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,12 +36,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insta/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="-646">
+              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/insta/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="e#629#661#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,7 +151,6 @@
         <option value="$PROJECT_DIR$/instagram/templates/login_template.html" />
         <option value="$PROJECT_DIR$/instagram/views/UserProfileDetailView.py" />
         <option value="$PROJECT_DIR$/instagram/forms/EditUserProfileForm.py" />
-        <option value="$PROJECT_DIR$/insta/urls.py" />
         <option value="$PROJECT_DIR$/instagram/templates/create_post_template.html" />
         <option value="$PROJECT_DIR$/instagram/views/auth.py" />
         <option value="$PROJECT_DIR$/instagram/templates/user_profile_detail_view.html" />
@@ -170,6 +181,7 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/instagram/urls.py" />
         <option value="$PROJECT_DIR$/insta/settings.py" />
+        <option value="$PROJECT_DIR$/insta/urls.py" />
       </list>
     </option>
   </component>
@@ -346,11 +358,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/insta/urls.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/instagram/models.py</url>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -493,16 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="81" column="42" lean-forward="false" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insta/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="28" column="81" lean-forward="false" selection-start-line="28" selection-start-column="81" selection-end-line="28" selection-end-column="81" />
-          <folding>
-            <element signature="e#629#661#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +737,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/insta/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="-646">
+          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/insta/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#629#661#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
