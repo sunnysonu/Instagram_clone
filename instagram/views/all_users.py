@@ -16,7 +16,7 @@ class AllUsers(LoginRequiredMixin, ListView):
         context = super(AllUsers, self).get_context_data(**kwargs)
         following_data = Followers.objects.filter(follower_id = user.id)
         following_ids = [data.following_id for data in following_data]
-        users = self.model.objects.all().exclude(Q(id__in = following_ids) | Q(id = user.id))
+        users = self.model.objects.all().exclude(Q(user__id__in = following_ids) | Q(user__id = user.id))
 
         is_following = []
         for user in users:
