@@ -24,7 +24,7 @@ class SignUpView(views.View):
 
             if user is not None:
                 login(request, user)
-                return redirect("http://127.0.0.1:8000/insta/createprofile/" + str(user.id))
+                return redirect("http://insta-clone-app.herokuapp.com/insta/createprofile/" + str(user.id))
             else:
                 return redirect("instagram:signup")
 
