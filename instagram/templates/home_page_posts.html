@@ -63,17 +63,17 @@ function ShowNavbar()
     <div class = "header">
         <h2 class = "heading">Instagram</h2>
         
-        <a href = "http://127.0.0.1:8000/insta/user/{{user.id}}/">
+        <a href = "http://insta-clone-app.herokuapp.com/insta/user/{{user.id}}/">
             <h6 class = "header-username">{{user.username}}</h6>
         </a>
 
         <img src = "{{user.userprofile.profile_picture.url}}" class = "header-profile-picture profile-picture-transition">
 
-        <a href="http://127.0.0.1:8000/insta/addpost/{{user.id}}">
+        <a href="http://insta-clone-app.herokuapp.com/insta/addpost/{{user.id}}">
             <div class = "left-last"><h1>+</h1></div>
         </a>
 
-        <a href="http://127.0.0.1:8000/insta/allusers/">
+        <a href="http://insta-clone-app.herokuapp.com/insta/allusers/">
             <div class = "right-last"
                  style = "position: absolute;
                           right: 15%;
@@ -85,12 +85,12 @@ function ShowNavbar()
         </a>        
 
         <div class = "navbar" id = "navbarid">
-            <a href="http://127.0.0.1:8000/insta/edit/{{user.id}}/">
+            <a href="http://insta-clone-app.herokuapp.com/insta/edit/{{user.id}}/">
                 <div class = "options"><h6>Edit Profile</h6></div>
             </a>
             <br>
 
-            <a href="http://127.0.0.1:8000/insta/logout/">
+            <a href="http://insta-clone-app.herokuapp.com/insta/logout/">
                 <div class = "options" style = "top: 75px"><h6>Logout</h6></div>
             </a>
             <br>
@@ -105,7 +105,7 @@ function ShowNavbar()
     <div class = "card" class = "container">
         <div class = "short-profile-card" class = "container">
             <img src = "{{post.user_profile.profile_picture.url}}" class = "short-profile-picture">
-            <a style = "color : black" href = "http://127.0.0.1:8000/insta/user/{{post.user_profile.user.id}}/"><h6 class = "profile-username">{{post.user_profile.user.username}}</h6></a>
+            <a style = "color : black" href = "http://insta-clone-app.herokuapp.com/insta/user/{{post.user_profile.user.id}}/"><h6 class = "profile-username">{{post.user_profile.user.username}}</h6></a>
         </div>
         <img src = "{{post.post.url}}" class = "posted-image">
         <div id = "like-section{{post.id}}">

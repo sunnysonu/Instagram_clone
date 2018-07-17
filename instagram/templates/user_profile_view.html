@@ -46,11 +46,11 @@
     <div class = "card" style = "width: 800px; left: 300px; height: 300px">
         <img src = "{{profile.profile_picture.url}}" class = "profile-picture">
         <h3 class = "username">{{profile.user.username}}</h3>
-        <a href = "http://127.0.0.1:8000/insta/{{profile.user.id}}/followers/"><p class = "content">{{profile.follower}} followers</p></a>
-        <a href = "http://127.0.0.1:8000/insta/{{profile.user.id}}/following/"><p class = "content" style = "left: 400px">{{profile.following}} following</p></a>
+        <a href = "http://insta-clone-app.herokuapp.com/insta/{{profile.user.id}}/followers/"><p class = "content">{{profile.follower}} followers</p></a>
+        <a href = "http://insta-clone-app.herokuapp.com/insta/{{profile.user.id}}/following/"><p class = "content" style = "left: 400px">{{profile.following}} following</p></a>
         <p class = "content" style = "top: 175px">{{profile.status}}</p>
         {% if is_authenticated_user %}
-        <a href = "http://127.0.0.1:8000/insta/edit/{{profile.user.id}}"><button class = "follow content" style = "top: 135px">edit profile</button></a>
+        <a href = "http://insta-clone-app.herokuapp.com/insta/edit/{{profile.user.id}}"><button class = "follow content" style = "top: 135px">edit profile</button></a>
         {% else %}
         <!-- <a href = "#"><button class = "follow content" style = "top: 135px">follow</button></a> -->
         <div id = "profilefollow-section" class = "content" style = "position: absolute; left: 442px;">
