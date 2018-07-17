@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fbd4df2-f446-4e41-8628-7c256aab49fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insta/settings.py" afterPath="$PROJECT_DIR$/insta/settings.py" />
-    </list>
+    <list default="true" id="3fbd4df2-f446-4e41-8628-7c256aab49fd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +102,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="332">
               <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-              <folding />
+              <folding>
+                <marker date="1531840231637" expanded="true" signature="2988:3379" ph="..." />
+                <marker date="1531840231637" expanded="true" signature="3072:3156" ph="..." />
+                <marker date="1531840231637" expanded="true" signature="3248:3346" ph="..." />
+                <marker date="1531840231637" expanded="false" signature="3298:3307" ph="..." />
+                <marker date="1531840231637" expanded="true" signature="3441:3456" ph="..." />
+                <marker date="1531840231637" expanded="true" signature="3550:4111" ph="..." />
+                <marker date="1531840231637" expanded="true" signature="3613:3931" ph="..." />
+                <marker date="1531840231637" expanded="false" signature="3739:3752" ph="..." />
+                <marker date="1531840231637" expanded="true" signature="4039:4100" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -674,7 +681,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-          <folding />
+          <folding>
+            <marker date="1531840231637" expanded="true" signature="2988:3379" ph="..." />
+            <marker date="1531840231637" expanded="true" signature="3072:3156" ph="..." />
+            <marker date="1531840231637" expanded="true" signature="3248:3346" ph="..." />
+            <marker date="1531840231637" expanded="false" signature="3298:3307" ph="..." />
+            <marker date="1531840231637" expanded="true" signature="3441:3456" ph="..." />
+            <marker date="1531840231637" expanded="true" signature="3550:4111" ph="..." />
+            <marker date="1531840231637" expanded="true" signature="3613:3931" ph="..." />
+            <marker date="1531840231637" expanded="false" signature="3739:3752" ph="..." />
+            <marker date="1531840231637" expanded="true" signature="4039:4100" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
