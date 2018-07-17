@@ -1,8 +1,31 @@
-{% extends "_basic.html" %}
+<!-- {% extends "_basic.html" %}
 {% block content %}
 <form method = "post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
     <input type = "submit">
 </form>
+{% endblock %} -->
+
+{% extends "_basic.html" %}
+{% block content %}
+
+<head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href = "{% static 'instagram/card.css' %}"/>
+        <link rel="stylesheet" type="text/css" href = "{% static 'instagram/header.css' %}"/>
+        <link rel="stylesheet" type="text/css" href = "{% static 'instagram/button.css' %}"/>
+        <link rel="stylesheet" type="text/css" href = "{% static 'instagram/edit-profile.css' %}"/>
+    </head>
+    
+    <div class = "header">
+        <h2 class = "heading">Instagram</h2>
+    </div>
+<div class = "card">
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class = "button" type = "submit" value = "update">
+    </form>
+</div>
 {% endblock %}

@@ -4,4 +4,4 @@ from instagram.models import *
 class CreatePostForm(forms.ModelForm):
     class Meta:
         model = Posts
-        exclude = ["id", "user_profile"]
+        exclude = ["id", "user_profile", "likes"]
