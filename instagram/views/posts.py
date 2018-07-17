@@ -33,7 +33,7 @@ class HomePagePostsView(LoginRequiredMixin, ListView):
         context = super(HomePagePostsView, self).get_context_data(**kwargs)
         following_data = Followers.objects.filter(follower_id = user.id)
         following_ids = [data.following_id for data in following_data]
-        posts = self.model.objects.filter(Q(user_profile__id__in=following_ids) | Q(user_profile__id = user.id))
+        posts = self.model.objects.filter(Q(user_profile__id__in=following_ids) | Q(user_profile__user__id = user.id))
         context["user"] = user
         likes = []
         for post in posts:
