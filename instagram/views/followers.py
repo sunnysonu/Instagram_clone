@@ -76,6 +76,11 @@ def FollowView(request):
     obj.following = Followers.objects.filter(follower_id = user.id).count()
     obj.save()
 
+    obj = UserProfile.objects.get(user__id = request.user.id)
+    obj.follower = Followers.objects.filter(following_id = request.user.id).count()
+    obj.following = Followers.objects.filter(follower_id = request.user.id).count()
+    obj.save()
+
     print(obj.following, obj.follower)
     print(obj)
 
