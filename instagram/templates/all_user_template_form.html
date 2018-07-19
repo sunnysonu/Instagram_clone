@@ -47,7 +47,7 @@
     {% for follower, is_following in data %}
         <div class = "follower-card">
             <img src = "{{follower.profile_picture.url}}" class = "follower-picture">
-            <a href = "http://insta-clone-app.herokuapp.com/insta/otheruser/{{follower.user.id}}/"><p class = "follower-username">{{follower.user.username}}</p></a>
+            <a href = "http://insta-clone-app.herokuapp.com/insta/user/{{follower.user.id}}/"><p class = "follower-username">{{follower.user.username}}</p></a>
             <div id = "alluser-section{{follower.user.id}}">
                 {% include 'follow_section.html' %}
             </div>
